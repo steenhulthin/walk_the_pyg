@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pandas
+import pandas as pd
 from pygwalker.api.streamlit import StreamlitRenderer
 
 st.set_page_config(layout="wide")
