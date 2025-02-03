@@ -1,3 +1,13 @@
 import streamlit as st
+import pandas as pandas
+from pygwalker.api.streamlit import StreamlitRenderer
 
+st.set_page_config(layout="wide")
 st.write("It's alive!")
+
+uploaded_file = st.file_uploader("Add your csv data")
+
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    pyg_app = StreamlitRenderer(df)
+    pyg_app.explorer()
